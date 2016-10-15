@@ -5,10 +5,10 @@ function Question (question, optionArray) {
         this.value = 0;
     }
     this.options = [];
-    for (optionName in optionArray){
-        options.push(new Option(optionName));
+    for (optionName of optionArray){
+        this.options.push(new Option(optionName));
     }
-    this.url = question.replace(/[^\w\s]|_/g, '').replace(/\s+/g, '');
+    this.url = ("/" + this.question.replace(/[^\w\s]|_/g, '').replace(/\s+/g, '')).toLowerCase();
 }
 
-module.exports.question = Question;
+module.exports.Question = Question;
