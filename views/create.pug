@@ -3,10 +3,14 @@ html
     head
         title Create Question
     body
-        h1 Create new closed question (limited to two answers for now)
+        h1 Create new close-ended question (limited to two answers for now)
         form(enctype="text/plain" method="post" action="redirect")
             input(type="text" name="questionName" value="Type Question Here")
+            br
             input(type="radio" name="fakeRad" checked)
             input(type="text" name="option1" value="Option 1")
+            br
             input(type="radio" name="fakeRad" checked)
             input(type="text" name="option2" value="Option 2")
+            br
+            input(type="submit")

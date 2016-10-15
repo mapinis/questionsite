@@ -4,7 +4,8 @@
   "description": "A website built on Node, where people can make quick questionnaires that expire and have people answer them",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"no tests specified\" / exit 1"
+    "test": "echo \"no tests specified\" / exit 1",
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
