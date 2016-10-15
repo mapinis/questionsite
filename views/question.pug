@@ -1,0 +1,14 @@
+doctype html
+html
+    head
+        title Question
+    body
+        h1= question
+        form(enctype='application/x-www-form-urlencoded' action="#{resultsURL}" method='post')
+            input(type='radio' name='answer' value='option1' checked)
+            = option1
+            br
+            input(type='radio' name='answer' value='option2')
+            = option2
+            br
+            p: input(type='submit')
