@@ -17,7 +17,7 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 
 app.get('/', function(req, res){
-    res.status(200).render('index.pug');
+    res.status(200).render('index.pug', {questions: questions});
 });
 
 app.get('/create', function(req, res){

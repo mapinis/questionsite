@@ -3,5 +3,9 @@ html
     head
         title Questions
     body
-        h1 Welcome, there is literally nothing here!
+        h1 Welcome to questions!
+        p: b Open Questions:
+        ul
+            each question in questions
+                li: a(href=question.url)= question.question
         a(href="create") Create Question
