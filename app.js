@@ -39,12 +39,7 @@ app.get('/:questionURL', function(req, res){
     for(currentQuestion of questions){
         if(req.url === currentQuestion.url){
             found = true;
-            res.status(200).render('question.pug', {
-                question: currentQuestion.question,
-                option1: currentQuestion.options[0].name,
-                option2: currentQuestion.options[1].name,
-                resultsURL: currentQuestion.url + "/results"
-            });
+            res.status(200).render('question.pug', {question: currentQuestion});
         }
     }
     if(found == false){
@@ -55,14 +50,33 @@ app.get('/:questionURL', function(req, res){
     //If nothing is found, 404
 }); 
 
-app.post('/:questionURL/:result', function(req, res){
-    res.status(404).redirect('/');
+app.post('/:questionURL', function(req, res){
+    var found = false;
+    for(currentQuestion of questions){
+        if(req.url == currentQuestion.url){
+            found = true;
+            currentQuestion.options[parseInt(req.body.answer)].value++;
+            res.status(308).redirect(currentQuestion.url + "/results"); //Should I use 308 here?
+        }
+    }
+    if(found == false){
+        res.status(404).redirect('/');
+    }
     //if there is a post, find that question and then change question's option1 or option2 values, then redirect to that results page
     //if none is found, 404
 });
 
-app.get('*', function(req, res){
-    res.status(404).redirect('/');
+app.get('/:questionURL/results', function(req, res){
+    var found = false;
+    for(currentQuestion of questions){
+        if(req.url == (currentQuestion.url + "/results")){
+            found = true;
+            res.status(200).render("results.pug", {question: currentQuestion});
+        }
+    }
+    if(found == false){
+        res.status(404).redirect('/');
+    }
 });
 
 console.log("Listening on http://localhost:8080");

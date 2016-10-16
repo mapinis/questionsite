@@ -1,0 +1,13 @@
+doctype html
+html
+    head
+        title Question Results
+    body
+        a(href="/") Home
+        h1= question.question
+        h3 Results:
+        each option in question.options
+            b=option.name
+            b : 
+            b=option.value
+            br

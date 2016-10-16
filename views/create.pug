@@ -3,14 +3,16 @@ html
     head
         title Create Question
     body
+        a(href="/") Home
         h1 Create new close-ended question (limited to two answers for now).
         form(action='create' method='post')
-            input(type='text' name='questionName' value='Type Question Here')
+            input(type='text' name='questionName' placeholder='Type Question Here')
             br
-            input(type='radio' name='fakeRad' value='fakeRad1' checked)
-            input(type='text' name='option1' value='Option 1')
+            input(type='radio' name='fakeRad' checked)
+            input(type='text' name='option1' placeholder='Option 1')
             br
-            input(type='radio' name='fakeRad' value='fakeRad2')
-            input(type='text' name='option2' value='Option 2')
+            input(type='radio' name='fakeRad')
+            input(type='text' name='option2' placeholder='Option 2')
             br
+            //-NAMES CAN BE CHANGED TO MAKE LOOPING MORE POSSIBLE
             input(type='submit')
