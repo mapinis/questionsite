@@ -18,7 +18,10 @@ a:visited {
     color: #5b5b5b;
 }
 
-a::active {
+a:active {
     color: #000;
 }
 
+a:hover {
+    color: #000;
+}
