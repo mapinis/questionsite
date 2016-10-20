@@ -2,12 +2,14 @@ doctype html
 html
     head
         title Question Results
+        link(href='/style.css', rel='stylesheet')
     body
         a(href="/") Home
+        a(href=question.url) Question
         h1= question.question
         h3 Results:
         each option in question.options
-            b=option.name
+            b= option.name
             b : 
-            b=option.value
+            b= option.value
             br

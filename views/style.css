@@ -1,0 +1,24 @@
+body {
+    background-color: #aaaaaa;
+    color: #000;
+    margin: 10% 30% 10% 30%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+input {
+    background-color: #FFF;
+    font-size: 120%;
+}
+
+a {
+    color: #5b5b5b;
+}
+
+a:visited {
+    color: #5b5b5b;
+}
+
+a::active {
+    color: #000;
+}
+

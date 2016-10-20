@@ -8,6 +8,7 @@ var questions = [];
 app.set('view engine', 'pug');
 app.set('views', __dirname + "/views");
 
+app.use(express.static(__dirname + '/views'));
 app.use(require("morgan")("dev"));
 
 app.use(bodyParser.urlencoded({
