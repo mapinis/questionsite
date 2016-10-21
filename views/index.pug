@@ -4,9 +4,10 @@ html
         title Questions
         link(href='/style.css', rel='stylesheet')
     body
-        h1 Welcome to questions!
-        p: b Open Questions:
-        ul
-            each question in questions
-                li: a(href=question.url)= question.question
-        a(href="create") Create Question
+        .content
+            h1 Welcome to questions!
+            p: b Open Questions:
+            ul
+                each question in questions
+                    li: a(href=question.url)= question.question
+            a(href="create") Create Question

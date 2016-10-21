@@ -1,7 +1,8 @@
+
 body {
     background-color: #aaaaaa;
     color: #000;
-    margin: 10% 30% 10% 30%;
+    padding: 0 0 0 0;
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -12,6 +13,7 @@ input {
 
 a {
     color: #5b5b5b;
+    font-size: 105%;
 }
 
 a:visited {
@@ -24,4 +26,18 @@ a:active {
 
 a:hover {
     color: #000;
+}
+
+.options {
+    font-size: 150%;
+}
+
+.content {
+    position: absolute;
+    word-wrap: break-word;
+    padding: 3% 3% 3% 3%;
+    top: 20%;
+    right: 33%;
+    left: 17%;
+    background-color: #8D8D8D !important;
 }
