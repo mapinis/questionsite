@@ -6,8 +6,8 @@ html
     body
         .content
             h1 Welcome to questions!
-            p: b Open Questions:
+            p(style="font-size:120%;"): b Open Questions:
             ul
                 each question in questions
                     li: a(href=question.url)= question.question
-            a(href="create") Create Question
+            a(href="create", style="font-size:115%") Create Question

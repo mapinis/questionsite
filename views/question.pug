@@ -9,12 +9,10 @@ html
             h1= question.question
             form(enctype='application/x-www-form-urlencoded' action=question.url method='post')
                 .options
-                    input(type='radio' name='answer' value='0' checked)
-                    = question.options[0].name
-                    br
-                    input(type='radio' name='answer' value='1')
-                    = question.options[1].name
-                    br
-                    //- THIS CAN BE MADE INTO A LOOP, BUT I AM NOT GOING TO RIGHT NOW
+                    ul(style="list-style: none;")
+                        each option, index in question.options
+                            li
+                                input(type='radio' name='answer' value=index)
+                                = option.name
                 p: input(type='submit')
             a(href=question.url + "/results") Results
