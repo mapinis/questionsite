@@ -3,15 +3,19 @@ html
     head
         title Question Results
         link(href='/style.css', rel='stylesheet')
+        link(href='/favicon.ico', rel='shortcut icon' type='image/x-icon')
     body
         .content
             a(href="/") Home
+            |&emsp;
+            |&emsp;
             |&emsp;
             a(href=question.url) Question
             h1= question.question
             h3 Results:
             each option in question.options
-                b= option.name
-                b : 
-                b= option.value
-                br
+                .listItem
+                    b= option.name
+                    b : 
+                    b= option.value
+                    br

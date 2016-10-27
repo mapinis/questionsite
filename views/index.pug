@@ -3,11 +3,13 @@ html
     head
         title Questions
         link(href='/style.css', rel='stylesheet')
+        link(href='/favicon.ico', rel='shortcut icon' type='image/x-icon')
+        style.
     body
         .content
             h1 Welcome to questions!
             p(style="font-size:120%;"): b Open Questions:
-            ul
-                each question in questions
-                    li: a(href=question.url)= question.question
-            a(href="create", style="font-size:115%") Create Question
+            each question in questions
+                a(class="listItem" href=question.url)
+                    =question.question
+            p: a(href="create", style="font-size:130%;") Create Question
