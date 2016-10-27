@@ -5,8 +5,7 @@ html
         link(href='/style.css', rel='stylesheet')
         link(href='/favicon.ico', rel='shortcut icon' type='image/x-icon')
         script(type="text/javascript").
-            options = [];
-            var optionAmount = 2;
+            var optionAmount = 0;
             function addOption(){
                 var options = document.getElementById("options");
                 optionAmount++;
@@ -21,7 +20,6 @@ html
                 options.appendChild(radioInput);
                 options.appendChild(optionInput);
                 options.appendChild(document.createElement("br"));
-                options.push(optionInput);
             }
     body
         .content
@@ -29,17 +27,14 @@ html
             |&emsp;
             |&emsp;
             |&emsp;
-            a(href="#", onclick="addOption()") Add Item
-            h1 Create new close-ended question (limited to two answers for now).
+            
+            h1 Create new close-ended question
             form(action='create' method='post')
                 input(autocomplete="off" type='text' name='questionName' placeholder='Type Question Here' style="width:75%")
                 br
                 div(id="options")
-                    input(type='radio' name='fakeRad' checked)
-                    input(autocomplete="off" type='text' name='option' placeholder='Option 1')
-                    br
-                    input(type='radio' name='fakeRad')
-                    input(autocomplete="noff" type='text' name='option' placeholder='Option 2')
-                    br
+                    script addOption();
+                    script addOption();
                 //-NAMES CAN BE CHANGED TO MAKE LOOPING MORE POSSIBLE
-                input(autocomplete="new-password" type='submit')
+                div.itemAdd: a(href="#", onclick="addOption()") Add Item
+                div: input(autocomplete="new-password" type='submit')
