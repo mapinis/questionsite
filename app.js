@@ -37,7 +37,7 @@ app.post('/create', limiter, function(req, res){
     console.log("New Question created @ " + newQuestion.url)
     console.log("\tQuestion: " + newQuestion.question)
     console.log("\tOptions: " + newQuestion.options)
-    res.status(200).redirect(newQuestion.url); //Am I sure about 200?
+    res.redirect(newQuestion.url);
     //Code for getting info, creating new question class instance, putting it in array of questions
 
 });
