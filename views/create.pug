@@ -27,7 +27,6 @@ html
             |&emsp;
             |&emsp;
             |&emsp;
-            
             h1 Create new close-ended question
             form(action='create' method='post')
                 input(autocomplete="off" type='text' name='questionName' placeholder='Type Question Here' style="width:75%")
@@ -35,6 +34,5 @@ html
                 div(id="options")
                     script addOption();
                     script addOption();
-                //-NAMES CAN BE CHANGED TO MAKE LOOPING MORE POSSIBLE
-                div.itemAdd: a(href="#", onclick="addOption()") Add Item
+                div.itemAdd: a(href="#", onclick="addOption()") Add Option
                 div: input(autocomplete="new-password" type='submit')

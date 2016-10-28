@@ -34,9 +34,9 @@ app.get('/create', function(req, res){
 app.post('/create', limiter, function(req, res){
     console.log(req.body.option);
     var newQuestion = new question.Question(req.body.questionName, req.body.option);
-    console.log("New Question created @ " + newQuestion.url)
-    console.log("\tQuestion: " + newQuestion.question)
-    console.log("\tOptions: " + newQuestion.options)
+    console.log((new Date().getTime() / 1000) + " New Question created @ " + newQuestion.url)
+    console.log("\t\tQuestion: " + newQuestion.question)
+    console.log("\t\tOptions: " + newQuestion.options.map(function(option) {return option.name}))
     res.redirect(newQuestion.url);
     //Code for getting info, creating new question class instance, putting it in array of questions
 
