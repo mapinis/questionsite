@@ -51,7 +51,7 @@ app.get('/:questionURL', function(req, res){
         }
     }
     if(found == false){
-        res.status(404).redirect('/');
+        res.status(404).render('404.pug', {url: req.url.substring(1, req.url.length)});
     }
     //Code for finding question in array, and going to question.pug with that question
     //Also, if there is /results, go to that question's results
@@ -68,7 +68,7 @@ app.post('/:questionURL', limiter, function(req, res){
         }
     }
     if(found == false){
-        res.status(404).redirect('/');
+        res.status(404).render('404.pug', {url: req.url.substring(1, req.url.length)});
     }
     //if there is a post, find that question and then change question's option1 or option2 values, then redirect to that results page
     //if none is found, 404
@@ -83,7 +83,7 @@ app.get('/:questionURL/results', function(req, res){
         }
     }
     if(found == false){
-        res.status(404).redirect('/');
+        res.status(404).render('404.pug', {url: req.url.substring(1, req.url.length)});
     }
 });
 

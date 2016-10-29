@@ -1,0 +1,31 @@
+doctype html
+html
+    head
+        title 404 - Page Not Found
+        link(href='/style.css', rel='stylesheet')
+        link(href='/favicon.ico', rel='shortcut icon' type='image/x-icon')
+        style.
+            p {
+                font-size: 110% !important;
+            }
+    body
+        .content
+            h1 404 - Page Not Found
+            p The page or question that you are looking for is either gone, missing, deleted, or never existed in the first place.
+            p
+                | You typed in: 
+                = url
+            p
+                | If you are looking for a question:
+                ul
+                    li
+                        | You might have typed/pasted the link in wrong. You entered:
+                        = url
+                        | . Please check if this is correct.
+                    li The question you are looking for might have expired. Please check the homepage and see if the question you are looking for is listed, or ask the creator.
+            p
+                | If you are looking for a hard-coded page on the site, such as /create, you might have typed it in wrong. You typed:
+                = url
+                | . Please check if this is correct.
+            p If you have done everything correctly, and you believe this is an error on my end (server-side), please email me at mapinis2019@gmail.com with the url you entered, what you were looking for, and when this happened.
+            p: a(href="/", style="font-size:130%;") Home
